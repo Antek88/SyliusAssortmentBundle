@@ -260,11 +260,13 @@ class CustomizableProduct extends Product implements CustomizableProductInterfac
     /**
      * {@inheritdoc}
      */
-    public function addProperty(ProductPropertyInterface $property)
+    public function addProperty($property)
     {
-        if (!$this->hasProperty($property)) {
-            $property->setProduct($this);
-            $this->properties->add($property);
+        if ($property instanceof ProductPropertyInterface) {
+            if (!$this->hasProperty($property)) {
+                $property->setProduct($this);
+                $this->properties->add($property);
+            }
         }
     }
 

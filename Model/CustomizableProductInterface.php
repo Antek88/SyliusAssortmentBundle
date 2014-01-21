@@ -157,7 +157,7 @@ interface CustomizableProductInterface extends ProductInterface
      *
      * @param ProductPropertyInterface $property
      */
-    public function addProperty(ProductPropertyInterface $property);
+    public function addProperty($property);
 
     /**
      * Removes product property from product.
